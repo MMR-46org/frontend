@@ -5,17 +5,16 @@ pipeline {
       }
     }
     stages {
-        stage('Stage 1') {
+        stage('Docker Build') {
             steps {
-                echo 'Hello world!'
+                sh 'Docker Build -t madhanmohanreddyeeda/github-repo-frontend .'
             }
         }
 
-
-        stage('Stage 2') {
+        stage('Docker Push') {
              steps {
-                sh 'echo Hello world!'
-             }
+                 sh 'Docker Push  madhanmohanreddyeeda/github-repo-frontend'
+            }
         }
     }
 }
