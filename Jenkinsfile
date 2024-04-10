@@ -13,7 +13,7 @@ pipeline {
 
     stage('Docker Push') {
       steps {
-        sh 'docker push docker.io/madhanmohanreddyeeda/github-repo-frontend'
+        sh 'docker push docker.io/madhanmohanreddyeeda/github-repo-frontend:latest'
       }
     }
 
