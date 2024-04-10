@@ -7,13 +7,13 @@ pipeline {
     stages {
         stage('Docker Build') {
             steps {
-                sh 'Docker Build -t madhanmohanreddyeeda/github-repo-frontend .'
+                sh 'docker build -t madhanmohanreddyeeda/github-repo-frontend .'
             }
         }
 
         stage('Docker Push') {
              steps {
-                 sh 'Docker Push  madhanmohanreddyeeda/github-repo-frontend'
+                 sh 'docker push  madhanmohanreddyeeda/github-repo-frontend'
             }
         }
     }
