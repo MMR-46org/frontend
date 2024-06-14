@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: { { .Values.component } }
+  labels:
+    app: { { .Values.component } }
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: { { .Values.component } }
+  template:
+    metadata:
+      labels:
+        app: { { .Values.component } }
+    spec:
+      containers:
+        - name: { { .Values.component } }
+          image: madhanmohanreddyeeda/github-repo-{ { .Values.component } }
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "750m"

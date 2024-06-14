@@ -1,0 +1,4 @@
+component: frontend
+service:
+  port: 80
+  containerPort: 80
