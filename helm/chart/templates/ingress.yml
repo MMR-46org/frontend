@@ -10,10 +10,10 @@ spec:
     - host: {{ .Values.component }}-dev.madhanmohanreddy.tech
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - pathType: Prefix
             backend:
               service:
-                name: { { .Values.component } }  # Name of the backend Service that the Ingress will route to
+                name: {{ .Values.component }}
                 port:
-                  number: 80  # Port of the backend Service
+                  number: 80
+            path: /
